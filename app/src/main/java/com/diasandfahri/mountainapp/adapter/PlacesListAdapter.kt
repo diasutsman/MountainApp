@@ -1,13 +1,15 @@
 package com.diasandfahri.mountainapp.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.diasandfahri.mountainapp.DetailActivity
 import com.diasandfahri.mountainapp.data.Mountain
 import com.dicoding.mountainapp.databinding.RowListMountainBinding
 
-class PlacesListAdapter(private val listMountain: ArrayList<Mountain>) : RecyclerView.Adapter<PlacesListAdapter.PlacesListViewHolder>() {
+class PlacesListAdapter(private val listMountains: ArrayList<Mountain>) : RecyclerView.Adapter<PlacesListAdapter.PlacesListViewHolder>() {
     class PlacesListViewHolder(val binding: RowListMountainBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PlacesListViewHolder(
@@ -16,13 +18,20 @@ class PlacesListAdapter(private val listMountain: ArrayList<Mountain>) : Recycle
 
     override fun onBindViewHolder(holder: PlacesListViewHolder, position: Int) {
         holder.binding.apply {
-            with(listMountain[position]) {
+            with(listMountains[position]) {
                 listName.text = name
                 listImg.setImageResource(img)
                 listLocation.text = location
+                holder.itemView.setOnClickListener {
+                    val intent =
+                        Intent(it.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.MOUNTAINS_DATA,
+                        listMountains[position])
+                    it.context.startActivity(intent)
+                }
             }
         }
     }
 
-    override fun getItemCount() = listMountain.size
+    override fun getItemCount() = listMountains.size
 }

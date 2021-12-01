@@ -27,8 +27,10 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
                 locationRowMountain.text = location
                 imgRowMountain.setImageResource((img))
                 holder.itemView.setOnClickListener {
-                    val intent = Intent(it.context, com.diasandfahri.mountainapp.DetailActivity::class.java)
-                    intent.putExtra(com.diasandfahri.mountainapp.DetailActivity.MOUNTAINS_DATA, listMountains[position])
+                    val intent =
+                        Intent(it.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.MOUNTAINS_DATA,
+                        listMountains[position])
                     it.context.startActivity(intent)
                 }
             }

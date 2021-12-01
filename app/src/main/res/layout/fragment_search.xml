@@ -32,7 +32,7 @@
     <EditText
         android:id="@+id/edt_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="48dp"
@@ -46,9 +46,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_srch_1"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         app:cardElevation="4dp"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="34dp"
         app:cardCornerRadius="32dp"
@@ -60,14 +60,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            tools:ignore="ContentDescription" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_srch_2"
-        android:layout_width="160dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
         android:layout_marginEnd="26dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="32dp"
@@ -87,8 +88,8 @@
     <androidx.cardview.widget.CardView
         app:cardElevation="4dp"
         android:id="@+id/cv_srch_3"
-        android:layout_width="160dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="34dp"
         app:cardCornerRadius="32dp"
@@ -107,8 +108,8 @@
     <androidx.cardview.widget.CardView
         app:cardElevation="4dp"
         android:id="@+id/cv_srch_4"
-        android:layout_width="160dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
         android:layout_marginEnd="26dp"
         app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@id/cv_srch_3"
