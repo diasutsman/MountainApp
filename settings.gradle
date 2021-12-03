@@ -7,5 +7,5 @@ dependencyResolutionManagement {
         mavenCentral() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "MountainApp"
+rootProject.name = "HikerPalace"
 include ':app'

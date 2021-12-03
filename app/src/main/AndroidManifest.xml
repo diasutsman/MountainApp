@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name="com.diasandfahri.mountainapp.DetailActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MountainApp.NoActionBar"/>
         <activity
             android:name="com.diasandfahri.mountainapp.MainActivity"
             android:exported="true"/>

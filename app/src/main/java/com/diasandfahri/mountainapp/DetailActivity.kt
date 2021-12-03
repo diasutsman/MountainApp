@@ -1,9 +1,18 @@
 package com.diasandfahri.mountainapp
 
+import android.content.res.Resources
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginTop
 import com.diasandfahri.mountainapp.data.Mountain
 import com.dicoding.mountainapp.databinding.ActivityDetailBinding
+import com.google.android.material.appbar.AppBarLayout
+import kotlin.math.abs
+import android.view.ViewGroup
+import android.view.ViewGroup.MarginLayoutParams
+import com.dicoding.mountainapp.R
+
 
 class DetailActivity : AppCompatActivity() {
 
@@ -17,8 +26,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//      untuk menampilkan toolbar
-        supportActionBar?.title = "Mountains Detail"
+//      untuk menampilkan toolbar dan tombol back
+        setSupportActionBar(binding.toolbarDetail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val mountain = intent.getParcelableExtra<Mountain>(MOUNTAINS_DATA) as Mountain
         binding.apply {
@@ -28,6 +37,25 @@ class DetailActivity : AppCompatActivity() {
             detailPeopleSuggested.text = "Suggested by ${mountain.people} people"
             detailDesc.text = mountain.description
         }
+        binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if(abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+//              collapse
+                val p = binding.nsvDetail.layoutParams as MarginLayoutParams
+                p.setMargins(0,0,0,0)
+                binding.nsvDetail.layoutParams = p
+                binding.clDetail.background = getDrawable(R.color.white)
+                binding.clDetail.elevation = 0f
+            }else if (verticalOffset == 0) {
+//              expanded
+                val p = binding.nsvDetail.layoutParams as MarginLayoutParams
+                p.setMargins(0, (-64 * Resources.getSystem().displayMetrics.density).toInt(),0,0)
+                binding.nsvDetail.layoutParams = p
+                binding.clDetail.background = getDrawable(R.drawable.bg_detail)
+                binding.clDetail.elevation = 4f
+            } else {
+                // Idle
+            }
+        })
     }
 
     override fun onSupportNavigateUp(): Boolean {
