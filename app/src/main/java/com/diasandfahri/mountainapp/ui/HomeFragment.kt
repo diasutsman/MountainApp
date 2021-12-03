@@ -39,11 +39,15 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = HikersAdapter(HikersData.listHikersData)
         }
-
+        val fr : FragmentTransaction = parentFragmentManager.beginTransaction()
         binding.navigationPlacesList.setOnClickListener {
 //          pindah fragment
-            val fr : FragmentTransaction = parentFragmentManager.beginTransaction()
             fr.replace(R.id.nav_host_fragment_activity_main, PlacesListFragment())
+            fr.commit()
+        }
+
+        binding.btnPp.setOnClickListener {
+            fr.replace(R.id.nav_host_fragment_activity_main, AccountFragment())
             fr.commit()
         }
 

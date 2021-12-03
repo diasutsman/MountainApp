@@ -3,6 +3,7 @@ package com.diasandfahri.mountainapp
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.marginTop
 import com.diasandfahri.mountainapp.data.Mountain
@@ -11,6 +12,7 @@ import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs
 import android.view.ViewGroup
 import android.view.ViewGroup.MarginLayoutParams
+import android.widget.Toast
 import com.dicoding.mountainapp.R
 
 
@@ -38,22 +40,15 @@ class DetailActivity : AppCompatActivity() {
             detailDesc.text = mountain.description
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            Log.d("println", "${64-(abs(verticalOffset) / appBarLayout.totalScrollRange.toDouble() * 64)}")
+            val p = binding.nsvDetail.layoutParams as MarginLayoutParams
+            p.setMargins(0, -((64-(abs(verticalOffset) / appBarLayout.totalScrollRange.toDouble() * 64)) * Resources.getSystem().displayMetrics.density).toInt(),0,0)
+            binding.nsvDetail.layoutParams = p
             if(abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
-//              collapse
-                val p = binding.nsvDetail.layoutParams as MarginLayoutParams
-                p.setMargins(0,0,0,0)
-                binding.nsvDetail.layoutParams = p
-                binding.clDetail.background = getDrawable(R.color.white)
                 binding.clDetail.elevation = 0f
             }else if (verticalOffset == 0) {
-//              expanded
-                val p = binding.nsvDetail.layoutParams as MarginLayoutParams
-                p.setMargins(0, (-64 * Resources.getSystem().displayMetrics.density).toInt(),0,0)
-                binding.nsvDetail.layoutParams = p
                 binding.clDetail.background = getDrawable(R.drawable.bg_detail)
                 binding.clDetail.elevation = 4f
-            } else {
-                // Idle
             }
         })
     }
