@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/bromo"
-            />
+            android:contentDescription="TODO" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,13 +58,13 @@
                 tools:text="Lombok,\nNusa Tenggara Barat"/>
 
             <TextView
-                android:id="@+id/detail_people_suggested"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
                 android:textSize="12sp"
+                android:id="@+id/detail_people_suggested"
                 app:layout_constraintBottom_toBottomOf="@id/detail_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/detail_location"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
 
 //      kodingan bottom nav
         val navView : BottomNavigationView = binding.navView
-        val navController : NavController = findNavController(R.id.nav_host_fragment_activity_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        navView.setupWithNavController(navHostFragment.navController)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
@@ -33,9 +35,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_account,
             )
         )
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-
+        setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
     }
 }

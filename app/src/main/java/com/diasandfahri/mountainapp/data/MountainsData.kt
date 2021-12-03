@@ -71,6 +71,58 @@ Litografi tahun 1828 oleh A. J. Bik yang menggambarkan Gunung Gede
 Gunung Gede diselimuti oleh hutan pegunungan, yang mencakup zona-zona submontana, montana, hingga ke subalpin di sekitar puncaknya. Hutan pegunungan di kawasan ini merupakan salah satu yang paling kaya jenis flora di Indonesia, bahkan di kawasan Malesia."""
     )
 
+    private val listPeople = arrayOf(
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+    )
+
+    private val listPopular = arrayOf(
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+    )
+
+    private val listNearest = arrayOf(
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+    )
+
+    private val listRecommended = arrayOf(
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+        (1..100).random(),
+    )
+
     val listMountains: ArrayList<Mountain>
         get() {
             val list = arrayListOf<Mountain>()
@@ -81,10 +133,10 @@ Gunung Gede diselimuti oleh hutan pegunungan, yang mencakup zona-zona submontana
                         img = mountainImages[i],
                         description = mountainDescriptions[i],
                         location = mountainLocations[i],
-                        people = (1..100).random(),
-                        nearest = (1..100).random(),
-                        recommended = (1..100).random(),
-                        popular = (1..100).random()
+                        people = listPeople[i],
+                        nearest = listNearest[i],
+                        recommended = listRecommended[i],
+                        popular = listPopular[i]
                     )
                 )
             }
