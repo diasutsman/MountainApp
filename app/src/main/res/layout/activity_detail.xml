@@ -57,7 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="64dp"
-            app:cardElevation="4dp">
+            app:cardElevation="4dp"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_detail"

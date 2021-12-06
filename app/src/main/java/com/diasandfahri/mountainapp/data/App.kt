@@ -9,8 +9,6 @@ class App : Application() {
         lateinit var instance: Application
         lateinit var resourses: Resources
     }
-    // MARK: - Lifecycle
-
     override fun onCreate() {
         super.onCreate()
         instance = this

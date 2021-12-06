@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="34dp"
-            android:text="Search Places"
+            android:text="@string/txt_search_places"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,14 +29,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
-            android:text="Find a good place to hike"
+            android:text="@string/txt_find_a_good_place_to_hike"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/search_txt"
             app:layout_constraintTop_toBottomOf="@id/search_txt" />
 
         <EditText
-            android:hint="Search mountains"
+            android:hint="@string/txt_search_mountains"
             android:id="@+id/edt_search"
             android:layout_width="match_parent"
             android:layout_height="60dp"

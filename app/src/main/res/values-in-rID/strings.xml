@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_home">Beranda</string>
+    <string name="txt_search">Cari</string>
+    <string name="txt_places_list">Daftar Tempat</string>
+    <string name="txt_account">Akun</string>
+    <string name="txt_more"><![CDATA[Lebih >>]]></string>
+    <string name="txt_place_description">Deskripsi Tempat</string>
+    <string name="txt_mountains_list">Daftar Gunung</string>
+    <string name="txt_name">Gunung %s</string>
+    <string name="txt_suggested">Disarankan oleh %s orang</string>
+    <string name="txt_words_from_hikers">Kata-kata dari Pendaki</string>
+    <string name="txt_discover_places">Temukan Tempat</string>
+    <string name="txt_search_places">Cari Tempat</string>
+    <string name="txt_find_a_good_place_to_hike">Temukan tempat yang bagus untuk mendaki</string>
+    <string name="txt_search_mountains">Cari gunung</string>
+    <string name="txt_login_info">Info Login</string>
+    <string name="txt_help">Bantuan</string>
+    <string name="txt_legal_information">Informasi Legal</string>
+    <string name="txt_log_out">Keluar</string>
+    <string name="txt_profile_picture">Gambar Profil</string>
+    <string name="txt_welcome">Selamat datang di %s</string>
+</resources>

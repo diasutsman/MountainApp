@@ -36,7 +36,7 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
                         listMountains[position])
                     it.context.startActivity(intent)
                     Toast.makeText(it.context,
-                        "Welcome to ${nameRowMountain.text}",
+                        App.resourses.getString(R.string.txt_welcome).format(nameRowMountain.text),
                         Toast.LENGTH_SHORT).show()
                 }
 

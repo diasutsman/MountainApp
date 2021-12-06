@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".15"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/txt_profile_picture" />
 
 
     <ImageView
@@ -37,6 +37,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
+        app:cardElevation="4dp"
         android:id="@+id/cvLoginInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,13 +54,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Login Info"
+            android:text="@string/txt_login_info"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        app:cardElevation="4dp"
         android:id="@+id/cvHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,13 +78,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Help"
+            android:text="@string/txt_help"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        app:cardElevation="4dp"
         android:id="@+id/cvLegalInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,13 +103,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Legal Information"
+            android:text="@string/txt_legal_information"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        app:cardElevation="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -122,7 +126,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Log Out"
+            android:text="@string/txt_log_out"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
