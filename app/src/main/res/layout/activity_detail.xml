@@ -44,22 +44,20 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_marginTop="-64dp"
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="-64dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
         <com.google.android.material.card.MaterialCardView
-            app:cardCornerRadius="64dp"
             android:id="@+id/cv_detail"
-            app:cardElevation="4dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:cardCornerRadius="64dp"
+            app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_detail"
@@ -90,16 +88,16 @@
 
                     app:layout_constraintStart_toStartOf="@id/detail_name"
                     app:layout_constraintTop_toBottomOf="@id/detail_name"
-                    tools:text="Lombok,\nNusa Tenggara Barat"/>
+                    tools:text="Lombok,\nNusa Tenggara Barat" />
 
                 <TextView
+                    android:id="@+id/detail_people_suggested"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:id="@+id/detail_people_suggested"
                     app:layout_constraintBottom_toBottomOf="@id/detail_location"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/detail_location"
@@ -121,8 +119,8 @@
                     android:gravity="top"
                     android:text="@string/txt_place_description"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hr_line" />
@@ -142,9 +140,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
-
-
-
 
 
     </androidx.core.widget.NestedScrollView>
