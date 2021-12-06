@@ -1,33 +1,25 @@
 package com.diasandfahri.mountainapp.data
 
+import android.app.Application
+import android.content.res.Resources
+import com.diasandfahri.mountainapp.MainActivity
 import com.dicoding.mountainapp.R
 
 object MountainsData {
     private val mountainNames = arrayOf(
-        "Gunung Bromo",
-        "Gunung Semeru",
-        "Gunung Prau",
-        "Gunung Rinjani",
-        "Gunung Ijen",
-        "Gunung Kelimutu",
-        "Gunung Patuha",
-        "Gunung Kerinci",
-        "Gunung Cartensz",
-        "Gunung Gede"
+        "Bromo",
+        "Semeru",
+        "Prau",
+        "Rinjani",
+        "Ijen",
+        "Kelimutu",
+        "Patuha",
+        "Kerinci",
+        "Cartensz",
+        "Gede"
     )
 
-    private val mountainLocations = arrayOf(
-        "Jawa Timur",
-        "Jawa Timur",
-        "Jawa Tengah",
-        "Nusa Tenggara Barat",
-        "Jawa Timur",
-        "Nusa Tenggara Timur",
-        "Jawa Barat",
-        "Sumatra Barat",
-        "Papua",
-        "Jawa Barat"
-    )
+    private val mountainLocations = App.resourses.getStringArray(R.array.list_location)
 
     private val mountainImages = arrayOf(
         R.drawable.bromo,
@@ -390,3 +382,4 @@ Untuk mencapai lokasi Taman Nasional Gede Pangrango bisa ditempuh melalui rute J
             )
         }
 }
+

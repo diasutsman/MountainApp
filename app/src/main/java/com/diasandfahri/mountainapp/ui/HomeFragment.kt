@@ -1,23 +1,20 @@
 package com.diasandfahri.mountainapp.ui
 
-import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diasandfahri.mountainapp.adapter.HikersAdapter
 import com.diasandfahri.mountainapp.adapter.HorizontalMountainAdapter
 import com.diasandfahri.mountainapp.data.HikersData
 import com.diasandfahri.mountainapp.data.MountainsData
 import com.dicoding.mountainapp.R
-import com.dicoding.mountainapp.databinding.ActivityMainBinding
 import com.dicoding.mountainapp.databinding.FragmentHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -32,23 +29,21 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.rvHorizontalMountains.apply {
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = HorizontalMountainAdapter(MountainsData.listMountains)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                adapter = HorizontalMountainAdapter(MountainsData.listMountains)
         }
         binding.rvHikersWords.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = HikersAdapter(HikersData.listHikersData)
         }
-        val fr : FragmentTransaction = parentFragmentManager.beginTransaction()
-        binding.navigationPlacesList.setOnClickListener {
-//          pindah fragment
-            fr.replace(R.id.nav_host_fragment_activity_main, PlacesListFragment())
-            fr.commit()
+        binding.navigationPlacesList.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.navigation_places_list)
+
         }
 
-        binding.btnPp.setOnClickListener {
-            fr.replace(R.id.nav_host_fragment_activity_main, AccountFragment())
-            fr.commit()
+        binding.btnPp.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.navigation_account)
         }
 
         return binding.root

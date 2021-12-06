@@ -33,11 +33,13 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val mountain = intent.getParcelableExtra<Mountain>(MOUNTAINS_DATA) as Mountain
         binding.apply {
-            detailName.text = mountain.name
-            detailLocation.text = mountain.location
-            imgDetail.setImageResource(mountain.img)
-            detailPeopleSuggested.text = "Suggested by ${mountain.people} people"
-            detailDesc.text = mountain.description
+            with(mountain){
+                detailName.text = getString(R.string.txt_name).format(name)
+                detailLocation.text = location
+                imgDetail.setImageResource(img)
+                detailPeopleSuggested.text = getString(R.string.txt_suggested).format(people)
+                detailDesc.text = description
+            }
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             Log.d("println", "${(appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange}")
