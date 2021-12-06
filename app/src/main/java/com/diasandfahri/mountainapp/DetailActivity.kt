@@ -40,15 +40,21 @@ class DetailActivity : AppCompatActivity() {
             detailDesc.text = mountain.description
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            Log.d("println", "${64-(abs(verticalOffset) / appBarLayout.totalScrollRange.toDouble() * 64)}")
-            val p = binding.nsvDetail.layoutParams as MarginLayoutParams
-            p.setMargins(0, -((64-(abs(verticalOffset) / appBarLayout.totalScrollRange.toDouble() * 64)) * Resources.getSystem().displayMetrics.density).toInt(),0,0)
+            Log.d("println", "${(appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange}")
+            val value = (appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange.toDouble()
+            var p = binding.nsvDetail.layoutParams as MarginLayoutParams
+            p.setMargins(0, -(value * 64 * Resources.getSystem().displayMetrics.density).toInt(),0,0)
             binding.nsvDetail.layoutParams = p
+            binding.cvDetail.cardElevation = 4f * Resources.getSystem().displayMetrics.density
+            binding.cvDetail.radius = (value * 64 * Resources.getSystem().displayMetrics.density).toFloat()
+
+            p = binding.detailName.layoutParams as MarginLayoutParams
+            p.setMargins((value * 32 * Resources.getSystem().displayMetrics.density).toInt(),0,0,0)
+            binding.detailName.layoutParams = p
+
+//          if appbar collapse
             if(abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
-                binding.clDetail.elevation = 0f
-            }else if (verticalOffset == 0) {
-                binding.clDetail.background = getDrawable(R.drawable.bg_detail)
-                binding.clDetail.elevation = 4f
+                binding.cvDetail.cardElevation = 0f
             }
         })
     }
