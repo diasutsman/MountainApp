@@ -1,12 +1,10 @@
 package com.diasandfahri.mountainapp.ui
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diasandfahri.mountainapp.adapter.HikersAdapter
@@ -31,7 +29,7 @@ class HomeFragment : Fragment() {
             setHasFixedSize(true)
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                adapter = HorizontalMountainAdapter(MountainsData.listMountains)
+            adapter = HorizontalMountainAdapter(MountainsData.listMountains)
         }
         binding.rvHikersWords.apply {
             layoutManager = LinearLayoutManager(requireContext())

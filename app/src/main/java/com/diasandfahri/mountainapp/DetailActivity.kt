@@ -19,10 +19,13 @@ import com.dicoding.mountainapp.R
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
+    private val dp = Resources.getSystem().displayMetrics.density
 
     companion object {
         const val MOUNTAINS_DATA = "mountains"
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,22 +45,17 @@ class DetailActivity : AppCompatActivity() {
             }
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            Log.d("println", "${(appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange}")
-            val value = (appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange.toDouble()
+//          0..1 between collapsed and appear
+            val value = (appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange.toFloat()
             var p = binding.nsvDetail.layoutParams as MarginLayoutParams
-            p.setMargins(0, -(value * 64 * Resources.getSystem().displayMetrics.density).toInt(),0,0)
+            p.setMargins(0, -(value * 64 * dp).toInt(),0,0)
             binding.nsvDetail.layoutParams = p
-            binding.cvDetail.cardElevation = 4f * Resources.getSystem().displayMetrics.density
-            binding.cvDetail.radius = (value * 64 * Resources.getSystem().displayMetrics.density).toFloat()
+            binding.cvDetail.cardElevation = (if(abs(verticalOffset) - appBarLayout.totalScrollRange == 0) 0f else 4f) * dp
+            binding.cvDetail.radius = (value * 64f * dp)
 
             p = binding.detailName.layoutParams as MarginLayoutParams
-            p.setMargins((value * 32 * Resources.getSystem().displayMetrics.density).toInt(),0,0,0)
+            p.setMargins((value * 32 * dp).toInt(),0,0,0)
             binding.detailName.layoutParams = p
-
-//          if appbar collapse
-            if(abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
-                binding.cvDetail.cardElevation = 0f
-            }
         })
     }
 

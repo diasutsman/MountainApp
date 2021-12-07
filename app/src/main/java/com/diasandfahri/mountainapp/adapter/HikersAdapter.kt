@@ -29,4 +29,5 @@ class HikersAdapter(private val listHikers: ArrayList<Hikers>) :
     }
 
     override fun getItemCount() = listHikers.size
+    /// tarararsvdasvhdbasfna
 }

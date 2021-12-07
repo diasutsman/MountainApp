@@ -12,5 +12,5 @@ data class Mountain(
     val img: Int = 0,
     val popular: Int = 0,
     val nearest: Int = 0,
-    val recommended: Int = 0
+    val recommended: Int = 0,
 ) : Parcelable

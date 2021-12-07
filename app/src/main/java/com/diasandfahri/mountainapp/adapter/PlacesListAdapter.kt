@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diasandfahri.mountainapp.DetailActivity
 import com.diasandfahri.mountainapp.data.App
 import com.diasandfahri.mountainapp.data.Mountain
+import com.diasandfahri.mountainapp.toDetail
 import com.dicoding.mountainapp.R
 import com.dicoding.mountainapp.databinding.RowListMountainBinding
 
@@ -25,18 +26,11 @@ class PlacesListAdapter(private val listMountains: ArrayList<Mountain>) :
         val system = Resources.getSystem()
         holder.binding.apply {
             with(listMountains[position]) {
-                listName.text = App.resourses.getString(R.string.txt_name).format(name)
+                listName.text = "Mount %s".format(name)
                 listImg.setImageResource(img)
                 listLocation.text = location
                 holder.itemView.setOnClickListener {
-                    val intent =
-                        Intent(it.context, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.MOUNTAINS_DATA,
-                        listMountains[position])
-                    it.context.startActivity(intent)
-                    Toast.makeText(it.context,
-                        App.resourses.getString(R.string.txt_welcome).format(listName.text),
-                        Toast.LENGTH_SHORT).show()
+                    toDetail(it.context, this,"Welcome to %s".format(listName) )
                 }
             }
         }
