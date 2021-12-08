@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.dicoding.mountainapp.databinding.FragmentSearchBinding
+import com.diasandfahri.mountainapp.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
 

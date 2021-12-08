@@ -3,7 +3,7 @@ package com.diasandfahri.mountainapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.mountainapp.databinding.ActivitySplashScreenBinding
+import com.diasandfahri.mountainapp.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
 

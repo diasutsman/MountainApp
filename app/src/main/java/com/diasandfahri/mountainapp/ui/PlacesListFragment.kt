@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diasandfahri.mountainapp.adapter.PlacesListAdapter
 import com.diasandfahri.mountainapp.data.MountainsData
-import com.dicoding.mountainapp.databinding.FragmentPlacesListBinding
+import com.diasandfahri.mountainapp.databinding.FragmentPlacesListBinding
 
 class PlacesListFragment : Fragment() {
 

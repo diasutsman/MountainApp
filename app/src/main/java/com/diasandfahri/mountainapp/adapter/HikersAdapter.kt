@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.diasandfahri.mountainapp.data.Hikers
-import com.dicoding.mountainapp.databinding.RowHikersWordsBinding
+import com.diasandfahri.mountainapp.databinding.RowHikersWordsBinding
 
 class HikersAdapter(private val listHikers: ArrayList<Hikers>) :
     RecyclerView.Adapter<HikersAdapter.HikersViewHolder>() {

@@ -37,6 +37,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:text="@string/txt_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_row_mountain"
             tools:text="Place Name" />

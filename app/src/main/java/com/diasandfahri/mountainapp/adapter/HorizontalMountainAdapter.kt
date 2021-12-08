@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.diasandfahri.mountainapp.DetailActivity
+import com.diasandfahri.mountainapp.R
 import com.diasandfahri.mountainapp.data.App
 import com.diasandfahri.mountainapp.data.Mountain
-import com.dicoding.mountainapp.R
-import com.dicoding.mountainapp.databinding.RowItemMountainBinding
+import com.diasandfahri.mountainapp.databinding.RowItemMountainBinding
 
 class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) :
     RecyclerView.Adapter<HorizontalMountainAdapter.HorizontalMountainViewholder>() {
@@ -26,9 +26,9 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
     override fun onBindViewHolder(holder: HorizontalMountainViewholder, position: Int) {
         holder.binding.apply {
             with(listMountains[position]) {
-                nameRowMountain.text = App.resourses.getString(R.string.txt_name).format(name)
+                nameRowMountain.text = App.res.getString(R.string.txt_name).format(name)
                 locationRowMountain.text = location
-                imgRowMountain.setImageResource((img))
+                imgRowMountain.setImageResource(img)
                 holder.itemView.setOnClickListener {
                     val intent =
                         Intent(it.context, DetailActivity::class.java)
@@ -36,7 +36,7 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
                         listMountains[position])
                     it.context.startActivity(intent)
                     Toast.makeText(it.context,
-                        App.resourses.getString(R.string.txt_welcome).format(nameRowMountain.text),
+                        App.res.getString(R.string.txt_welcome).format(nameRowMountain.text),
                         Toast.LENGTH_SHORT).show()
                 }
 

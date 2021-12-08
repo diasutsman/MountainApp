@@ -1,6 +1,6 @@
 package com.diasandfahri.mountainapp.data
 
-import com.dicoding.mountainapp.R
+import com.diasandfahri.mountainapp.R
 
 object HikersData {
 

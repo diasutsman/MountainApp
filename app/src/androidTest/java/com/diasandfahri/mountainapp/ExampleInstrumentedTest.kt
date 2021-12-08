@@ -1,4 +1,4 @@
-package com.dicoding.mountainapp
+package com.diasandfahri.mountainapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

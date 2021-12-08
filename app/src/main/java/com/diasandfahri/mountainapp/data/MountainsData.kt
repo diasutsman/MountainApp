@@ -1,6 +1,6 @@
 package com.diasandfahri.mountainapp.data
 
-import com.dicoding.mountainapp.R
+import com.diasandfahri.mountainapp.R
 
 object MountainsData {
     private val mountainNames = arrayOf(
@@ -16,7 +16,8 @@ object MountainsData {
         "Gede"
     )
 
-    private val mountainLocations = App.resourses.getStringArray(R.array.list_location)
+    private val mountainLocations
+    get() = App.res.getStringArray(R.array.list_location) as Array<String>
 
     private val mountainImages = arrayOf(
         R.drawable.bromo,
@@ -31,7 +32,8 @@ object MountainsData {
         R.drawable.gede
     )
 
-    private val mountainDescriptions = App.resourses.getStringArray(R.array.detail_mountains)
+    private val mountainDescriptions
+    get() = App.res.getStringArray(R.array.detail_mountains) as Array<String>
 
     private val listPeople = arrayOf(
         (1..100).random(),

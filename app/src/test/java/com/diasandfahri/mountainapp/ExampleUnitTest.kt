@@ -1,4 +1,4 @@
-package com.dicoding.mountainapp
+package com.diasandfahri.mountainapp
 
 import org.junit.Test
 

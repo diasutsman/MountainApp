@@ -21,7 +21,7 @@
             app:expandedTitleTextAppearance="@style/ExpandedBarTextStyle"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             android:id="@+id/title_detail_mountain"
-            app:title="Mountain Detail">
+            app:title="@string/txt_title_detail">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -78,6 +78,7 @@
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/txt_name"
                     tools:text="Bromo Mountain" />
 
                 <TextView
@@ -98,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:gravity="center_vertical"
+                    android:text="@string/txt_suggested"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@id/detail_location"
