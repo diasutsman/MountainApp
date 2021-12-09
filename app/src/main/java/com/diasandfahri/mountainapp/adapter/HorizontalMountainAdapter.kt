@@ -10,6 +10,7 @@ import com.diasandfahri.mountainapp.R
 import com.diasandfahri.mountainapp.data.App
 import com.diasandfahri.mountainapp.data.Mountain
 import com.diasandfahri.mountainapp.databinding.RowItemMountainBinding
+import com.diasandfahri.mountainapp.toDetail
 
 class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) :
     RecyclerView.Adapter<HorizontalMountainAdapter.HorizontalMountainViewholder>() {
@@ -30,14 +31,9 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
                 locationRowMountain.text = location
                 imgRowMountain.setImageResource(img)
                 holder.itemView.setOnClickListener {
-                    val intent =
-                        Intent(it.context, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.MOUNTAINS_DATA,
-                        listMountains[position])
-                    it.context.startActivity(intent)
-                    Toast.makeText(it.context,
-                        App.res.getString(R.string.txt_welcome).format(nameRowMountain.text),
-                        Toast.LENGTH_SHORT).show()
+                    toDetail(it.context,
+                        this,
+                        App.res.getString(R.string.txt_welcome).format(nameRowMountain.text))
                 }
 
             }
