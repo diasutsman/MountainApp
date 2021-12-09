@@ -15,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var mountain: Mountain
     private lateinit var binding: ActivityDetailBinding
-    private val dp : Float = Resources.getSystem().displayMetrics.density
+    private val dp: Float = Resources.getSystem().displayMetrics.density
 
     companion object {
         const val MOUNTAINS_DATA = "mountains"
@@ -39,31 +39,20 @@ class DetailActivity : AppCompatActivity() {
             }
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-//            Log.d("println",
-//                "${(appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange}")
-            val value =
-                (appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange.toDouble()
+//          Relative position (in 0..1) while scrolling
+            val value = (appBarLayout.totalScrollRange + verticalOffset) / appBarLayout.totalScrollRange.toFloat()
+
+//          Set margin between detail text and detail image
             var p = binding.nsvDetail.layoutParams as MarginLayoutParams
-            p.setMargins(0,
-                -(value * 64 * dp).toInt(),
-                0,
-                0)
+            p.setMargins(0, -(value * 64 * dp).toInt(), 0, 0)
             binding.nsvDetail.layoutParams = p
-            binding.cvDetail.cardElevation = 4f * dp
-            binding.cvDetail.radius =
-                (value * 64 * dp).toFloat()
+            binding.cvDetail.cardElevation = if (appBarLayout.totalScrollRange + verticalOffset == 0) 0f else 4f * dp
+            binding.cvDetail.radius = (value * 64 * dp)
 
+//          Set margin for TextView
             p = binding.detailName.layoutParams as MarginLayoutParams
-            p.setMargins((value * 32 * dp).toInt(),
-                0,
-                0,
-                0)
+            p.setMargins((value * 32 * dp).toInt(), 0, 0, 0)
             binding.detailName.layoutParams = p
-
-//          if appbar collapse
-            if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
-                binding.cvDetail.cardElevation = 0f
-            }
         })
     }
 
