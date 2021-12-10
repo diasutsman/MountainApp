@@ -2,6 +2,7 @@ package com.diasandfahri.mountainapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.diasandfahri.mountainapp.R
 import com.diasandfahri.mountainapp.data.App
@@ -23,7 +24,7 @@ class PlacesListAdapter(private val listMountains: ArrayList<Mountain>) :
             with(listMountains[position]) {
                 listName.text = App.res.getString(R.string.txt_name).format(name)
                 listImg.setImageResource(img)
-                listLocation.text = location
+                listLocation.text = App.res.getString(locationStringRes)
                 holder.itemView.setOnClickListener {
                     toDetail(it.context,
                         this,

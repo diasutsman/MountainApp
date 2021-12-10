@@ -16,8 +16,18 @@ object MountainsData {
         "Gede"
     )
 
-    private val mountainLocations
-    get() = App.res.getStringArray(R.array.list_location) as Array<String>
+    private val mountainLocations = arrayOf(
+        R.string.loc_mountain_1,
+        R.string.loc_mountain_2,
+        R.string.loc_mountain_3,
+        R.string.loc_mountain_4,
+        R.string.loc_mountain_5,
+        R.string.loc_mountain_6,
+        R.string.loc_mountain_7,
+        R.string.loc_mountain_8,
+        R.string.loc_mountain_9,
+        R.string.loc_mountain_10,
+    )
 
     private val mountainImages = arrayOf(
         R.drawable.bromo,
@@ -32,8 +42,18 @@ object MountainsData {
         R.drawable.gede
     )
 
-    private val mountainDescriptions
-    get() = App.res.getStringArray(R.array.detail_mountains) as Array<String>
+    private val mountainDescriptions = arrayOf(
+        R.string.desc_mountain_1,
+        R.string.desc_mountain_2,
+        R.string.desc_mountain_3,
+        R.string.desc_mountain_4,
+        R.string.desc_mountain_5,
+        R.string.desc_mountain_6,
+        R.string.desc_mountain_7,
+        R.string.desc_mountain_8,
+        R.string.desc_mountain_9,
+        R.string.desc_mountain_10
+    )
 
     private val listPeople = arrayOf(
         (1..100).random(),
@@ -93,8 +113,8 @@ object MountainsData {
                 Mountain(
                     name = mountainNames[i],
                     img = mountainImages[i],
-                    description = mountainDescriptions[i],
-                    location = mountainLocations[i],
+                    descriptionStringRes = mountainDescriptions[i],
+                    locationStringRes = mountainLocations[i],
                     people = listPeople[i],
                     nearest = listNearest[i],
                     recommended = listRecommended[i],

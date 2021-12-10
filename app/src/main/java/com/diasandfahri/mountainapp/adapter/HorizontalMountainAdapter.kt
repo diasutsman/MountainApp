@@ -28,7 +28,7 @@ class HorizontalMountainAdapter(private val listMountains: ArrayList<Mountain>) 
         holder.binding.apply {
             with(listMountains[position]) {
                 nameRowMountain.text = App.res.getString(R.string.txt_name).format(name)
-                locationRowMountain.text = location
+                locationRowMountain.text = App.res.getString(locationStringRes)
                 imgRowMountain.setImageResource(img)
                 holder.itemView.setOnClickListener {
                     toDetail(it.context,

@@ -19,10 +19,12 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val MOUNTAINS_DATA = "mountains"
+        const val TAG = "DetailActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Called")
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 //      untuk menampilkan toolbar dan tombol back
@@ -32,10 +34,10 @@ class DetailActivity : AppCompatActivity() {
         binding.apply {
             with(mountain) {
                 detailName.text = detailName.text.toString().format(name)
-                detailLocation.text = location
+                detailLocation.text = getString(locationStringRes)
                 imgDetail.setImageResource(img)
                 detailPeopleSuggested.text = detailPeopleSuggested.text.toString().format(people)
-                detailDesc.text = description
+                detailDesc.text = getString(descriptionStringRes)
             }
         }
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
@@ -60,4 +62,35 @@ class DetailActivity : AppCompatActivity() {
         onBackPressed()
         return super.onSupportNavigateUp()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart Called")
+    }
+
 }
