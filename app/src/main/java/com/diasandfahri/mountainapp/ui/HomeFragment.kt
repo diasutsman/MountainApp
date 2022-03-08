@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diasandfahri.mountainapp.R
 import com.diasandfahri.mountainapp.adapter.HikersAdapter
@@ -28,12 +29,12 @@ class HomeFragment : Fragment() {
         setupHorRV()
         setupHikersRV()
 
-        binding.navigationPlacesList.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.navigation_places_list)
+        binding.btnMore.setOnClickListener {
+            it.findNavController().navigate(R.id.navigation_places_list)
         }
 
-        binding.btnPp.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.navigation_account)
+        binding.btnPp.setOnClickListener {
+            it.findNavController().navigate(R.id.navigation_account)
         }
 
         return binding.root
